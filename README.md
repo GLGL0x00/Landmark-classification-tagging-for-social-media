@@ -26,7 +26,7 @@ The goal was to design a Convolutional Neural Network (CNN) from scratch and the
 
 ### 🧪 Preprocessing & Augmentation
 
-A rich data augmentation pipeline was used to simulate real-world image variations and improve model robustness:
+Data augmentation pipeline was used to simulate real-world image variations and improve model robustness:
 
 ```python
 transforms.Compose([
@@ -54,3 +54,127 @@ transforms.Compose([
 - RandomResizedCrop: Emulate zooming and framing differences.
 
 ---
+
+## 🧠 Model Architecture
+<details>
+  <summary><strong>CNN From Scratch Architecture Summary</strong>
+    <blockquote>
+      <strong>Model Flow:</strong> Input → [Conv-BN-ReLU + MaxPool] ×5 → GAP → FC(50)
+    </blockquote>
+  </summary>
+
+  <br>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Layers</th>
+        <th>Output Shape</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Input</strong></td>
+        <td>—</td>
+        <td><code>[3, 224, 224]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 1</strong></td>
+        <td>Conv(64) → BN → ReLU → MaxPool</td>
+        <td><code>[64, 112, 112]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 2</strong></td>
+        <td>Conv(128) → BN → ReLU → MaxPool</td>
+        <td><code>[128, 56, 56]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 3</strong></td>
+        <td>Conv(256) ×2 → BN → ReLU → MaxPool</td>
+        <td><code>[256, 28, 28]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 4</strong></td>
+        <td>Conv(512) ×2 → BN → ReLU → MaxPool</td>
+        <td><code>[512, 14, 14]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 5</strong></td>
+        <td>Conv(512) ×2 → BN → ReLU → MaxPool</td>
+        <td><code>[512, 7, 7]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Head</strong></td>
+        <td>GAP → Flatten → Dropout → FC(50)</td>
+        <td><code>[50]</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+</details>
+
+
+
+  
+<details>
+  <summary><strong>ResNet-style CNN Architecture Summary</strong>
+    <blockquote><strong>Model Flow:</strong> Input → [ResBlock + MaxPool] ×5 → GAP → FC(50)</blockquote>
+  </summary>
+  <table>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Layers</th>
+        <th>Output Shape</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Input</strong></td>
+        <td>—</td>
+        <td><code>[3, 224, 224]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 1</strong></td>
+        <td>ResidualBlock(3→64)<br>→ Conv-BN-ReLU ×2 + SkipConv (1×1) + ReLU<br>+ MaxPool(2×2)</td>
+        <td><code>[64, 112, 112]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 2</strong></td>
+        <td>ResidualBlock(64→128) + MaxPool</td>
+        <td><code>[128, 56, 56]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 3</strong></td>
+        <td>ResidualBlock(128→256) ×2 + MaxPool</td>
+        <td><code>[256, 28, 28]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 4</strong></td>
+        <td>ResidualBlock(256→512) ×2 + MaxPool</td>
+        <td><code>[512, 14, 14]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 5</strong></td>
+        <td>ResidualBlock(512→512) ×2 + MaxPool</td>
+        <td><code>[512, 7, 7]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Block 6</strong></td>
+        <td>ResidualBlock(512→512) ×2 + MaxPool</td>
+        <td><code>[512, 7, 7]</code></td>
+      </tr>
+      <tr>
+        <td><strong>Head</strong></td>
+        <td>GlobalAvgPool → Flatten → Dropout(0.5) → Linear(512→50)</td>
+        <td><code>[50]</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+</details>
+
+You can inspect the final model with TorchScript:
+```python
+torch.jit.load("model_scripted.pt")
