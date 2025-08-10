@@ -1,18 +1,18 @@
-# 🏛️ Landmark-classification&tagging-for-social-media 🔍
+# 🗺️ Landmark Classification Project
 
-A deep learning project to classify landmark images using a custom CNN architecture and explain model predictions with Grad-CAM visualizations.
+## 📌 Description
+This project is part of the **AWS Machine Learning Engineer Nanodegree Program** offered by **Udacity** and **AWS**. It focuses on building and improving Convolutional Neural Networks (CNNs) for landmark classification.
 
----
+In photo-sharing services, metadata like GPS location helps organize and tag images. But many images lack this metadata. This project aims to solve that by classifying landmarks in images to infer their locations.
 
-## 📌 Project Overview
+## 🧠 Project Overview
+The goal was to train a model to identify landmarks in images. The project required building CNNs from scratch, applying transfer learning, and improving model performance.
 
-This project was part of the **AWS Machine Learning Engineer Nanodegree** by **Udacity and AWS**, focusing on building an image classifier for world landmarks.
-
-The goal was to design a Convolutional Neural Network (CNN) from scratch and then enhance its performance using transfer learning. A key part of the project involved experimenting with different architectures to boost accuracy and generalization.
-
-💡 My standout contributions:
-- Implemented **residual connections** in the custom CNN to improve training stability and depth.
-- Used **Grad-CAM** to generate heatmaps that visualize which parts of the image most influenced the model’s predictions, making the model more interpretable.
+### 💡 My standout contributions:
+- Built a CNN from scratch for classification.
+- Enhanced performance with **residual connections**.
+- Applied **transfer learning using ResNet34**.
+- Used **Grad-CAM** for visual model explainability.
 
 ---
 
@@ -20,10 +20,7 @@ The goal was to design a Convolutional Neural Network (CNN) from scratch and the
 
 - **Source**: A curated subset of the [Google Landmarks Dataset](https://github.com/cvdfoundation/google-landmark) provided by Udacity as part of the AWS Machine Learning Engineer Nanodegree program.
 - **Classes**: 50 world landmarks
-- **Images**: ~100 images per class (~5,000 total)
-- **Balanced**: Yes (approximately equal images per class)
-- **Purpose**: Educational — designed for hands-on learning and model experimentation.
-
+- **Images**: ~100 images per class (~5,000 total - for learning purposes)
 ### 🧪 Preprocessing & Augmentation
 
 Data augmentation pipeline was used to simulate real-world image variations and improve model robustness:
@@ -55,9 +52,11 @@ transforms.Compose([
 
 ---
 
-## 🧠 Model Architecture
+## 🏋️ Model Training
+To explore different strategies in landmark classification, I trained and compared three distinct models:
+
 <details>
-  <summary><strong>CNN From Scratch Architecture Summary</strong>
+  <summary><strong>1- CNN From Scratch Architecture Summary</strong>
     <blockquote>
       <strong>Model Flow:</strong> Input → [Conv-BN-ReLU + MaxPool] ×5 → GAP → FC(50)
     </blockquote>
@@ -118,7 +117,7 @@ transforms.Compose([
 
   
 <details>
-  <summary><strong>ResNet-style CNN Architecture Summary</strong>
+  <summary><strong>2- ResNet-style CNN Architecture Summary</strong>
     <blockquote><strong>Model Flow:</strong> Input → [ResBlock + MaxPool] ×5 → GAP → FC(50)</blockquote>
   </summary>
   <table>
@@ -174,6 +173,10 @@ transforms.Compose([
   </table>
 
 </details>
+
+<strong>3. Transfer Learning using ResNet34<strong>
+   - Pre-trained on ImageNet
+   - Fine-tuned final layers for landmark classification
 
 You can inspect the final model with TorchScript:
 ```python
