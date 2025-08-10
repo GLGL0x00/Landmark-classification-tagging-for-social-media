@@ -117,7 +117,7 @@ To explore different strategies in landmark classification, I trained and compar
 
   
 <details>
-  <summary><strong>2- ResNet-style CNN Architecture Summary</strong>
+  <summary><strong>2- CNN + Residual Connections Architecture Summary</strong>
     <blockquote><strong>Model Flow:</strong> Input → [ResBlock + MaxPool] ×5 → GAP → FC(50)</blockquote>
   </summary>
   <table>
@@ -177,6 +177,44 @@ To explore different strategies in landmark classification, I trained and compar
 <strong>3. Transfer Learning using ResNet34<strong>
    - Pre-trained on ImageNet
    - Fine-tuned final layers for landmark classification
+
+
+### 📈 Model Comparison Summary
+**Hyperparameters:**
+- batch_size => 64  
+- num_epochs => 100      
+- dropout => 0.4          
+- learning_rate => 0.0001  
+- optimizer => 'adam'          
+- weight_decay => 0.001   
+
+| Model                     | F1-score | Notes                     |
+|---------------------------|----------|---------------------------|
+| CNN from Scratch          | 70.88 %  |                           |
+| CNN + Residual Connections| 74.8 %   |                           |
+| Transfer Learning (ResNet34)| 72 %+  | Trained only for 50 epoch |
+
+## 📊 Evaluation & Results
+
+### ✅ Classification Report visualization
+<details><summary><strong>CNN from Scratch</strong></summary>
+  <img width="1990" height="1589" alt="image" src="https://github.com/user-attachments/assets/c8237479-7772-48be-9de7-a996e9c19882" />
+</details>
+<details><summary><strong>CNN + Residual Connections</strong></summary>
+    <img width="1989" height="1589" alt="image" src="https://github.com/user-attachments/assets/6b832c0a-e784-4b92-b1bc-0c3a5a47ed91" />
+</details>
+
+<details><summary><strong>Transfer Learning (ResNet34)</strong></summary>
+</details>
+
+
+### 📉 Confusion Matrix
+A confusion matrix was plotted to identify classes commonly confused. (Attach image in repo)
+
+### 🔍 Grad-CAM Examples
+Grad-CAM was implemented to visualize regions in images that influenced the model's decision.
+(Attach Grad-CAM result images to visually show model focus on landmarks.)
+
 
 You can inspect the final model with TorchScript:
 ```python
