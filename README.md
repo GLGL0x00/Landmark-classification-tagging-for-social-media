@@ -198,13 +198,15 @@ To explore different strategies in landmark classification, I trained and compar
 
 ### ✅ Classification Report visualization
 <details><summary><strong>CNN from Scratch</strong></summary>
-  <img width="1990" height="1589" alt="image" src="https://github.com/user-attachments/assets/c8237479-7772-48be-9de7-a996e9c19882" />
+  <img width="1990" height="1589" alt="CNN from Scratch visualization" src="https://github.com/user-attachments/assets/c8237479-7772-48be-9de7-a996e9c19882" />
 </details>
 <details><summary><strong>CNN + Residual Connections</strong></summary>
-    <img width="1989" height="1589" alt="image" src="https://github.com/user-attachments/assets/6b832c0a-e784-4b92-b1bc-0c3a5a47ed91" />
+    <img width="1989" height="1589" alt="CNN + Residual Connections visualization" src="https://github.com/user-attachments/assets/6b832c0a-e784-4b92-b1bc-0c3a5a47ed91" />
 </details>
 
 <details><summary><strong>Transfer Learning (ResNet34)</strong></summary>
+    <img width="1989" height="1589" alt="Transfer Learning (ResNet34) visualization" src="https://github.com/user-attachments/assets/cc1f7e36-e1e2-4735-8ae1-fbfa20b6decf" />
+
 </details>
 
 
