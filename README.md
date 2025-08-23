@@ -215,12 +215,17 @@ To explore different strategies in landmark classification, I trained and compar
 </details>
 
 
-### 📉 Confusion Matrix
-A confusion matrix was plotted to identify classes commonly confused. (Attach image in repo)
+## 🔍 Grad-CAM Examples
+> Grad-CAM was implemented to visualize regions in images that influenced the model's decision.
 
-### 🔍 Grad-CAM Examples
-Grad-CAM was implemented to visualize regions in images that influenced the model's decision.
-(Attach Grad-CAM result images to visually show model focus on landmarks.)
+<strong>CNN from Scratch</strong>
+<img width="989" height="343" alt="image" src="https://github.com/user-attachments/assets/dc665b70-0e7f-47ee-a957-46f372870d95" />
+
+
+
+<strong>CNN + Residual Connections</strong>
+<img width="989" height="343" alt="image" src="https://github.com/user-attachments/assets/c3276be0-9723-42a9-af02-625646ef1911" />
+
 
 
 You can inspect the final model with TorchScript:
