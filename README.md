@@ -188,11 +188,16 @@ To explore different strategies in landmark classification, I trained and compar
 - optimizer => 'adam'          
 - weight_decay => 0.001   
 
-| Model                     | F1-score | Notes                     |
-|---------------------------|----------|---------------------------|
-| CNN from Scratch          | 70.88 %  |                           |
-| CNN + Residual Connections| 74.8 %   |                           |
-| Transfer Learning (ResNet34)| 72 %+  | Trained only for 50 epoch |
+
+| Model                       | F1-score | Notes                          |
+|-----------------------------|----------|--------------------------------|
+| CNN from Scratch            | 70.88 %  | Baseline model                 |
+| CNN + Residual Connections  | 74.8 %   | Residuals improved accuracy    |
+| Transfer Learning (ResNet34)| 72  %    | Trained only for 50 epochs     |
+
+#### 📝 Training Insights
+- Switching the learning rate scheduler from **ExponentialLR** to **ReduceLROnPlateau** significantly boosted test accuracy (from **56% → 70%**).  
+- Adding **residual connections** to the scratch CNN improved F1-score from **70% → 74%**
 
 ## 📊 Evaluation & Results
 
