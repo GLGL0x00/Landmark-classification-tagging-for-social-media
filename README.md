@@ -3,10 +3,10 @@
   - [📌 Description](#description)
   - [🚀 Usage](#usage)
   - [📂 Dataset](#dataset)
-  - [🏋️ Model Training](#-model-training)
+  - [🏋️ Model Training](#model-training)
   - [📈 Model Comparison Summary](#-model-comparison-summary)
-  - [📊 Evaluation & Results](#-evaluation--results)
-  - [🔍 Grad-CAM Examples](#-grad-cam-examples)
+  - [📊 Evaluation & Results](#evaluation--results)
+  - [🔍 Grad-CAM Examples](#grad-cam-examples)
 
 
 ## 📌 Description
