@@ -252,7 +252,3 @@ To explore different strategies in landmark classification, I trained and compar
 <img width="989" height="343" alt="image" src="https://github.com/user-attachments/assets/c3276be0-9723-42a9-af02-625646ef1911" />
 
 
-
-You can inspect the final model with TorchScript:
-```python
-torch.jit.load("model_scripted.pt")
