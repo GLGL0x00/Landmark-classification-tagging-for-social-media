@@ -13,8 +13,6 @@ In photo-sharing services, metadata like GPS location helps organize and tag ima
   ```
 
   ### 1- Run as a Streamlit App
-  <img width="1919" height="826" alt="image" src="https://github.com/user-attachments/assets/439bb41e-8058-4d8f-b08b-806b2082e2c3" />
-
   ```bash
   streamlit run streamlit_app.py
   ```
@@ -23,6 +21,8 @@ In photo-sharing services, metadata like GPS location helps organize and tag ima
     * Compare predictions from CNN, CNN + Residual Connections, and ResNet34.
 
     * View the Top-5 predicted classes with bar charts.
+      <img width="1919" height="826" alt="image" src="https://github.com/user-attachments/assets/439bb41e-8058-4d8f-b08b-806b2082e2c3" />
+
 
   ### 2- Run as a Jupyter Notebook App (Voila)
   Launch the notebook as a standalone web app:
@@ -44,7 +44,7 @@ The goal was to train a model to identify landmarks in images. The project requi
 ## 📂 Dataset
 
 - **Source**: A curated subset of the [Google Landmarks Dataset](https://github.com/cvdfoundation/google-landmark) provided by Udacity as part of the AWS Machine Learning Engineer Nanodegree program.
-- **Classes**: 50 world landmarks
+- **Classes**: [50 world landmarks](https://github.com/GLGL0x00/Landmark-classification-tagging-for-social-media/blob/main/Class_names.txt)
 - **Images**: ~100 images per class (~5,000 total - for learning purposes)
 ### 🧪 Preprocessing & Augmentation
 
