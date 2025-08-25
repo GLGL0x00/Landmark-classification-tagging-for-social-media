@@ -1,9 +1,44 @@
 # 🗺️ Landmark Classification Project
+## 📑 Table of Contents
+  - [📌 Description](#description)
+  - [🚀 Usage](#usage)
+  - [📂 Dataset](#dataset)
+  - [🏋️ Model Training](#-model-training)
+  - [📈 Model Comparison Summary](#-model-comparison-summary)
+  - [📊 Evaluation & Results](#-evaluation--results)
+  - [🔍 Grad-CAM Examples](#-grad-cam-examples)
+
 
 ## 📌 Description
 This project is part of the **AWS Machine Learning Engineer Nanodegree Program** offered by **Udacity** and **AWS**. It focuses on building and improving Convolutional Neural Networks (CNNs) for landmark classification.
 
 In photo-sharing services, metadata like GPS location helps organize and tag images. But many images lack this metadata. This project aims to solve that by classifying landmarks in images to infer their locations.
+
+  ---
+  ## Usage
+  ### ⚙️ Requirements
+  Make sure you have the following installed:
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+  ### 1- Run as a Streamlit App
+  <img width="1919" height="826" alt="image" src="https://github.com/user-attachments/assets/439bb41e-8058-4d8f-b08b-806b2082e2c3" />
+
+  ```bash
+  streamlit run streamlit_app.py
+  ```
+  - Upload an image to:
+
+    * Compare predictions from CNN, CNN + Residual Connections, and ResNet34.
+
+    * View the Top-5 predicted classes with bar charts.
+
+  ### 2- Run as a Jupyter Notebook App (Voila)
+  Launch the notebook as a standalone web app:
+  ```bash
+  voila app.ipynb
+  ```
 
 ## 🧠 Project Overview
 The goal was to train a model to identify landmarks in images. The project required building CNNs from scratch, applying transfer learning, and improving model performance.
