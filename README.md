@@ -1,14 +1,4 @@
 # 🗺️ Landmark Classification Project
-## 📑 Table of Contents
-  - [📌 Description](#description)
-  - [🚀 Usage](#usage)
-  - [📂 Dataset](#dataset)
-  - [🏋️ Model Training](#model-training)
-  - [📈 Model Comparison Summary](#-model-comparison-summary)
-  - [📊 Evaluation & Results](#evaluation--results)
-  - [🔍 Grad-CAM Examples](#grad-cam-examples)
-
-
 ## 📌 Description
 This project is part of the **AWS Machine Learning Engineer Nanodegree Program** offered by **Udacity** and **AWS**. It focuses on building and improving Convolutional Neural Networks (CNNs) for landmark classification.
 
